@@ -10,7 +10,9 @@ jobs:
       - name: Get code
         uses: actions/checkout@v6
       - name: Load & Cache Dependencies
-        uses: ./.github/workflows/actions/cached-deps    
+        uses: ./.github/workflows/actions/cached-deps 
+        with:
+          cache-hit: 'true'   
       - name: Lint code
         run: npm run lint
   test:
